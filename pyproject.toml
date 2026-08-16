@@ -1,0 +1,40 @@
+[project]
+name = "lootbox-auditor"
+version = "0.1.0"
+description = "Anytime-valid auditing of published loot box drop rates: what continuous monitoring costs on rare items."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2",
+    "ruff>=0.5",
+]
+# Phase 2 — classical tests and reference distributions.
+stats = [
+    "scipy>=1.13",
+]
+# Phase 4 — figures and grids.
+plots = [
+    "matplotlib>=3.8",
+    "pandas>=2.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lba"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

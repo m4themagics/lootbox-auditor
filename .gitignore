@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+
+# прогоны: в git идут манифесты и отчёты, не сырые выходы
+experiments/*/results/

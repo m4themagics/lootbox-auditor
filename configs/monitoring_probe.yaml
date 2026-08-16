@@ -1,0 +1,38 @@
+# Phase 0 — kill-test grid: calibration and the price of monitoring.
+#
+# Values are deliberately null. They are chosen and written into
+# experiments/00_price_of_monitoring/protocol.md BEFORE the run, and this file is filled from
+# that protocol — never the other way round. A run against unfilled values must fail loudly
+# rather than fall back to defaults.
+
+table:
+  source: null               # game and jurisdiction of the published disclosure
+  claimed_p: [null, null]    # rarity levels, e.g. common and headline item
+  retrieved_on: null         # date the disclosure was read
+
+alternative:
+  understatement: [null, null, null]   # δ, so that true p = claimed p · (1 − δ)
+
+horizon:
+  max_openings: null         # censoring point, fixed in advance
+
+methods:
+  - name: naive_peeking      # calibration branch, not a competitor
+    alpha: null
+  - name: fixed_horizon
+    alpha: null
+    n: null                  # planned sample size; its choice is itself part of the finding
+  - name: e_detector
+    alpha: null
+    alternative_mixture: null
+
+streams:
+  n: null                    # fixed before the run, never raised afterwards
+  seed_stream: null          # separate seeds: stream and method
+  seed_method: null
+  paired: true               # common random numbers across methods
+
+uncertainty:
+  statistic: null            # median detection delay; paired difference between methods
+  interval: null             # bootstrap over streams
+  report_censored_share: true
